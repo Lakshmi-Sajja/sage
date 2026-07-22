@@ -25,6 +25,7 @@ from feature_engineering import extract_features  # noqa: E402
 
 MODEL_DIR = HERE / "models"
 CATBOOST_DIR = MODEL_DIR / "catboost"
+LIGHTGBM_DIR = MODEL_DIR / "lightgbm"
 
 NUMERIC_FEATURES = [
     "char_count", "word_count", "line_count", "sentence_count",
@@ -96,6 +97,29 @@ def predict_catboost(prompt_row: dict, models: list) -> tuple:
     return tokens, quality
 
 
+def predict_lightgbm(prompt_row: dict, models: list) -> tuple:
+    import json
+
+    import lightgbm as lgb
+
+    input_model = lgb.Booster(model_file=str(LIGHTGBM_DIR / "token_predictor_input_tokens.txt"))
+    output_model = lgb.Booster(model_file=str(LIGHTGBM_DIR / "token_predictor_output_tokens.txt"))
+    quality_model = lgb.Booster(model_file=str(LIGHTGBM_DIR / "quality_predictor.txt"))
+    quality_classes = json.loads((LIGHTGBM_DIR / "quality_predictor_classes.json").read_text())
+
+    X = pd.DataFrame([{**prompt_row, "model": m} for m in models])[["model"] + FEATURE_ORDER]
+    X["model"] = X["model"].astype("category")
+
+    input_preds = np.clip(input_model.predict(X), a_min=0, a_max=None)
+    output_preds = np.clip(output_model.predict(X), a_min=0, a_max=None)
+    quality_probs = quality_model.predict(X)
+    quality_preds = [quality_classes[i] for i in np.argmax(quality_probs, axis=1)]
+
+    tokens = {m: (int(round(input_preds[i])), int(round(output_preds[i]))) for i, m in enumerate(models)}
+    quality = {m: quality_preds[i] for i, m in enumerate(models)}
+    return tokens, quality
+
+
 def estimate_cost(model: str, input_tokens: int, output_tokens: int):
     rates = PRICING.get(model)
     if rates is None:
@@ -107,7 +131,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("prompt", help="Prompt text to estimate tokens/cost/quality for")
     parser.add_argument(
-        "--backend", choices=["catboost", "rf"], default="catboost",
+        "--backend", choices=["catboost", "rf", "lightgbm"], default="catboost",
         help="Which trained model family to use (default: catboost)",
     )
     args = parser.parse_args()
@@ -115,7 +139,7 @@ def main():
     models = known_models()
     prompt_row = build_feature_row(args.prompt)
 
-    predict_fn = predict_rf if args.backend == "rf" else predict_catboost
+    predict_fn = {"rf": predict_rf, "catboost": predict_catboost, "lightgbm": predict_lightgbm}[args.backend]
     tokens, quality = predict_fn(prompt_row, models)
 
     rows = []
