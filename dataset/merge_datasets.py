@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
-"""Merge per-model CSVs in modelWiseDs/ into unified long/wide comparison tables.
+"""Merge per-model feature CSVs in cleaned/ into unified long/wide comparison tables.
 
-Reads dataset1.csv..dataset6.csv (one model each, schema:
-Model Name, Prompt, Input Tokens, Output Tokens, Quality, Feedback),
-joins them on normalized prompt text, and writes:
+Reads cleaned/dataset1_features.csv..dataset6_features.csv (one model each,
+output of clean_datasets.py + feature_engineering.py: the original schema
+Model Name, Prompt, Input Tokens, Output Tokens, Quality, Feedback plus the
+16 engineered prompt features), joins them on normalized prompt text, and
+writes:
 
-  merged/merged_long.csv  - one row per (prompt, model)
-  merged/merged_wide.csv  - one row per prompt, columns per model
+  merged/merged_long.csv  - one row per (prompt, model), with per-row features
+  merged/merged_wide.csv  - one row per prompt, columns per model, plus one
+                            set of prompt-level feature columns (features
+                            depend only on prompt text, not on the model)
 
-Does not modify or delete the source dataset*.csv files.
+Does not modify or delete the source cleaned/*_features.csv files.
 """
 
 import csv
@@ -16,15 +20,23 @@ import re
 from pathlib import Path
 
 HERE = Path(__file__).parent
+IN_DIR = HERE / "cleaned"
 OUT_DIR = HERE / "merged"
 
 SOURCE_FILES = [
-    "dataset1.csv",
-    "dataset2.csv",
-    "dataset3.csv",
-    "dataset4.csv",
-    "dataset5.csv",
-    "dataset6.csv",
+    "dataset1_features.csv",
+    "dataset2_features.csv",
+    "dataset3_features.csv",
+    "dataset4_features.csv",
+    "dataset5_features.csv",
+    "dataset6_features.csv",
+]
+
+FEATURE_FIELDS = [
+    "char_count", "word_count", "line_count", "sentence_count",
+    "unique_words", "avg_word_length", "prompt_depth",
+    "has_code", "has_json", "has_markdown", "has_math", "has_xml",
+    "reasoning_prompt", "creative_prompt", "tool_usage_prompt", "rag_prompt",
 ]
 
 # Fill in per-model $/1M-token pricing here when known. Left blank
@@ -43,7 +55,7 @@ def normalize_prompt(p: str) -> str:
 
 
 def load_dataset(filename: str) -> list[dict]:
-    path = HERE / filename
+    path = IN_DIR / filename
     rows = []
     with open(path, newline="", encoding="utf-8", errors="replace") as fh:
         reader = csv.DictReader(fh)
@@ -51,7 +63,7 @@ def load_dataset(filename: str) -> list[dict]:
             input_tokens = r["Input Tokens"].strip()
             output_tokens = r["Output Tokens"].strip()
             ok = input_tokens.isdigit() and output_tokens.isdigit()
-            rows.append({
+            row = {
                 "source_file": filename,
                 "model": r["Model Name"].strip(),
                 "prompt_raw": r["Prompt"].strip(),
@@ -61,7 +73,10 @@ def load_dataset(filename: str) -> list[dict]:
                 "quality": r["Quality"].strip(),
                 "feedback": r["Feedback"].strip(),
                 "row_ok": ok,
-            })
+            }
+            for feat in FEATURE_FIELDS:
+                row[feat] = r.get(feat, "")
+            rows.append(row)
     return rows
 
 
@@ -75,10 +90,15 @@ def build_wide(all_rows: list[dict]) -> tuple[list[str], list[dict]]:
     by_prompt: dict[str, dict] = {}
     for r in all_rows:
         key = r["prompt_key"]
+        is_new = key not in by_prompt
         entry = by_prompt.setdefault(key, {"prompt_key": key, "prompt_raw": r["prompt_raw"]})
-        # keep the longest raw prompt text as the canonical display version
-        if len(r["prompt_raw"]) > len(entry["prompt_raw"]):
+        # keep the longest raw prompt text as the canonical display version,
+        # and its features (features depend on exact prompt text, e.g. a
+        # leading "1. " numbering prefix changes char/word counts slightly)
+        if is_new or len(r["prompt_raw"]) > len(entry["prompt_raw"]):
             entry["prompt_raw"] = r["prompt_raw"]
+            for feat in FEATURE_FIELDS:
+                entry[feat] = r[feat]
 
         model = r["model"]
         # if a model has multiple rows for the same prompt (dupes), keep the first
@@ -89,7 +109,7 @@ def build_wide(all_rows: list[dict]) -> tuple[list[str], list[dict]]:
         entry[f"{model}::quality"] = r["quality"]
         entry[f"{model}::row_ok"] = r["row_ok"]
 
-    fieldnames = ["prompt_key", "prompt_raw", "num_models_covered"]
+    fieldnames = ["prompt_key", "prompt_raw", "num_models_covered"] + FEATURE_FIELDS
     for m in models:
         fieldnames += [f"{m}::input_tokens", f"{m}::output_tokens", f"{m}::quality", f"{m}::row_ok"]
 
@@ -119,8 +139,9 @@ def main():
 
     long_path = OUT_DIR / "merged_long.csv"
     with open(long_path, "w", newline="", encoding="utf-8") as fh:
-        fieldnames = ["source_file", "model", "prompt_raw", "prompt_key",
-                      "input_tokens", "output_tokens", "quality", "feedback", "row_ok"]
+        fieldnames = (["source_file", "model", "prompt_raw", "prompt_key",
+                       "input_tokens", "output_tokens", "quality", "feedback", "row_ok"]
+                      + FEATURE_FIELDS)
         writer = csv.DictWriter(fh, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(all_rows)
