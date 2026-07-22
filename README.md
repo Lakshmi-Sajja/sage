@@ -34,52 +34,71 @@ files are never modified in place.
    `llama3` and `opencode/big-pickle` are excluded here — their logged
    token counts don't track prompt length like every other model, pointing
    to a collection bug rather than real signal.
-6. **Train** — two model families trained on the same X/y for comparison:
+6. **Train** — three model families trained on the same X/y for comparison:
    - `dataset/train_token_predictor.py` / `train_quality_predictor.py` —
      RandomForest baselines (one-hot encoded categoricals), saved to
      `models/*.joblib`.
    - `models/catboost/train_token_predictor_catboost.py` /
      `train_quality_predictor_catboost.py` — CatBoost variants (native
      categorical handling), saved to `models/catboost/*.cbm`.
+   - `models/lightgbm/train_token_predictor_lightgbm.py` /
+     `train_quality_predictor_lightgbm.py` — LightGBM variants (native
+     categorical handling via pandas `category` dtype), saved to
+     `models/lightgbm/*.txt`.
 
 7. **Predict** — `predict.py` (repo root) takes a raw prompt, runs it through
    the same feature engineering, and prints the tokens/cost/quality table
-   above for every model seen during training. `--backend rf|catboost`
+   above for every model seen during training. `--backend rf|catboost|lightgbm`
    picks which trained family to use (default `catboost`). Cost is computed
    from a hardcoded `PRICING` table in `predict.py` (not learned from data,
    since the dataset has no pricing column) -- edit it to match real
    provider rates.
 
-Each training script (both RandomForest and CatBoost variants) also writes
-its held-out metrics to `results/<task>_<family>.json` (MAE/RMSE/R2 for the
-token predictor, accuracy/macro-F1/classification report/confusion matrix
-for the quality predictor) so the two model families can be compared without
-re-running training.
+Each training script writes its held-out metrics to
+`results/<family>/<task>.json` (MAE/RMSE/R2 for the token predictor,
+accuracy/macro-F1/classification report/confusion matrix for the quality
+predictor) so the model families can be compared without re-running
+training.
 
-Run phases in order from `dataset/`:
+Dependencies are managed with [uv](https://github.com/astral-sh/uv) via the
+root `pyproject.toml`/`uv.lock`; `uv run python ...` picks up the project's
+venv automatically (creating/syncing it on first use).
+
+Run the whole pipeline in order with `script.sh` (repo root):
 
 ```bash
-python clean_datasets.py
-python feature_engineering.py
-python merge_datasets.py
-python prepare_targets.py
-python train_token_predictor.py
-python train_quality_predictor.py
-python ../models/catboost/train_token_predictor_catboost.py
-python ../models/catboost/train_quality_predictor_catboost.py
-python ../predict.py "your prompt here"
+./script.sh                        # clean -> features -> merge -> targets -> train all 3 families
+./script.sh "your prompt here"      # same, then predict.py --backend {rf,catboost,lightgbm} on the prompt
+```
+
+Or run phases individually:
+
+```bash
+uv run python dataset/clean_datasets.py
+uv run python dataset/feature_engineering.py
+uv run python dataset/merge_datasets.py
+uv run python dataset/prepare_targets.py
+uv run python dataset/train_token_predictor.py
+uv run python dataset/train_quality_predictor.py
+uv run python models/catboost/train_token_predictor_catboost.py
+uv run python models/catboost/train_quality_predictor_catboost.py
+uv run python models/lightgbm/train_token_predictor_lightgbm.py
+uv run python models/lightgbm/train_quality_predictor_lightgbm.py
+uv run python predict.py "your prompt here"
 ```
 
 ## Layout
 
 ```
 dataset/            pipeline scripts + data at each phase (raw_datasets -> cleaned -> merged)
-models/             trained model artifacts (RandomForest .joblib, CatBoost .cbm) + CatBoost training scripts
-results/            held-out eval metrics (MAE/RMSE/R2, accuracy/F1) per task and model family, as JSON
+models/             trained model artifacts (RandomForest .joblib, CatBoost .cbm, LightGBM .txt) + per-family training scripts
+results/            held-out eval metrics (MAE/RMSE/R2, accuracy/F1), one subdir per model family (rf/, catboost/, lightgbm/), JSON per task
 predict.py           CLI: prompt in -> tokens/cost/quality table out, per trained model
+script.sh           runs the full pipeline end-to-end (see above)
+pyproject.toml      project deps for uv (catboost, lightgbm, numpy, pandas, scikit-learn, joblib)
 prompts/            held-out prompt lists used to generate/test data
-experiments/trial1/ early static token-counting + pricing prototype (superseded)
-experiments/trial2/ agent-loop token tracer + response/chat analysis prototype (superseded)
+experiments/trial1/ early static token-counting + pricing prototype (superseded, own pyproject.toml/requirements.txt)
+experiments/trial2/ agent-loop token tracer + response/chat analysis prototype (superseded, own requirements.txt)
 ```
 
 `experiments/` holds earlier prototypes kept for reference; the active
