@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+.venv/
+venv/
+env/
+
+# uv
+.uv/
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Generated outputs / analysis artifacts
+trial2/responses_batch*.json
+trial2/responses_analysis.csv
+trial2/responses_analysis.json
+trial2/parsed_prompts2.json
+trial2/team11.csv
+trial2/multi_turn_chat-analysis.csv
+trial2/multi_turn_chat-analysis.json
+trial2/chat_with_quality*.csv
+trial2/chat_with_quality*.json
+trial2/chat_with_quality*.txt
+trial2/modelWiseDs/
+trial2/test_prompt_answers/
