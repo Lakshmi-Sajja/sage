@@ -1,0 +1,116 @@
+{
+  "model_type": "random_forest",
+  "task": "quality_predictor",
+  "timestamp": "2026-07-22T20:36:09.828632+00:00",
+  "train_rows": 991,
+  "test_rows": 248,
+  "accuracy": 0.6330645161290323,
+  "macro_f1": 0.6351724795121021,
+  "classification_report": {
+    "Bad": {
+      "precision": 0.5423728813559322,
+      "recall": 0.8,
+      "f1-score": 0.6464646464646465,
+      "support": 40.0
+    },
+    "Average": {
+      "precision": 0.7211538461538461,
+      "recall": 0.6944444444444444,
+      "f1-score": 0.7075471698113207,
+      "support": 108.0
+    },
+    "Good": {
+      "precision": 0.5961538461538461,
+      "recall": 0.3875,
+      "f1-score": 0.4696969696969697,
+      "support": 80.0
+    },
+    "Excellent": {
+      "precision": 0.5757575757575758,
+      "recall": 0.95,
+      "f1-score": 0.7169811320754716,
+      "support": 20.0
+    },
+    "accuracy": 0.6330645161290323,
+    "macro avg": {
+      "precision": 0.6088595373553001,
+      "recall": 0.7079861111111111,
+      "f1-score": 0.6351724795121021,
+      "support": 248.0
+    },
+    "weighted avg": {
+      "precision": 0.6402701203480318,
+      "recall": 0.6330645161290323,
+      "f1-score": 0.6217300823204658,
+      "support": 248.0
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "Bad",
+      "Average",
+      "Good",
+      "Excellent"
+    ],
+    "matrix": [
+      [
+        32,
+        6,
+        2,
+        0
+      ],
+      [
+        13,
+        75,
+        19,
+        1
+      ],
+      [
+        14,
+        22,
+        31,
+        13
+      ],
+      [
+        0,
+        1,
+        0,
+        19
+      ]
+    ]
+  },
+  "top_features": [
+    {
+      "name": "char_count",
+      "importance": 0.15422529959226425
+    },
+    {
+      "name": "model_claude-opus-4-8",
+      "importance": 0.15109297585963624
+    },
+    {
+      "name": "model_Groq-llama-3.3-70b-versatile",
+      "importance": 0.1368905760278201
+    },
+    {
+      "name": "word_count",
+      "importance": 0.11305008827853273
+    },
+    {
+      "name": "avg_word_length",
+      "importance": 0.10492078785293452
+    },
+    {
+      "name": "unique_words",
+      "importance": 0.09646404137732019
+    },
+    {
+      "name": "model_DeepSeek V4 Flash",
+      "importance": 0.0758487333193242
+    },
+    {
+      "name": "model_deepseek-reasoner",
+      "importance": 0.07164882585378692
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "model_type": "catboost",
+  "task": "token_predictor",
+  "timestamp": "2026-07-22T20:36:13.476092+00:00",
+  "train_rows": 991,
+  "test_rows": 248,
+  "metrics": {
+    "input_tokens": {
+      "mae": 1.8924105773866933,
+      "rmse": 3.4679412715056257,
+      "r2": 0.9616886727983662
+    },
+    "output_tokens": {
+      "mae": 61.17110689454616,
+      "rmse": 117.32877665865843,
+      "r2": 0.599179863624976
+    }
+  },
+  "top_features": [
+    {
+      "name": "model",
+      "importance": 36.57639235836724
+    },
+    {
+      "name": "char_count",
+      "importance": 28.36074285175096
+    },
+    {
+      "name": "word_count",
+      "importance": 14.918773892858837
+    },
+    {
+      "name": "unique_words",
+      "importance": 11.446836636036139
+    },
+    {
+      "name": "avg_word_length",
+      "importance": 5.534490054006765
+    },
+    {
+      "name": "sentence_count",
+      "importance": 2.1657784922975307
+    },
+    {
+      "name": "reasoning_prompt",
+      "importance": 0.506891491113676
+    },
+    {
+      "name": "creative_prompt",
+      "importance": 0.28802810380491195
+    }
+  ]
+}

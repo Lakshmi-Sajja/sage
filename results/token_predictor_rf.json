@@ -1,0 +1,53 @@
+{
+  "model_type": "random_forest",
+  "task": "token_predictor",
+  "timestamp": "2026-07-22T20:35:57.547673+00:00",
+  "train_rows": 991,
+  "test_rows": 248,
+  "metrics": {
+    "input_tokens": {
+      "mae": 2.03801350534919,
+      "rmse": 4.875818190709668,
+      "r2": 0.9242681204572116
+    },
+    "output_tokens": {
+      "mae": 62.00173134232106,
+      "rmse": 117.89333103765584,
+      "r2": 0.5953133070952411
+    }
+  },
+  "top_features": [
+    {
+      "name": "model_Groq-llama-3.3-70b-versatile",
+      "importance": 0.3298282179179354
+    },
+    {
+      "name": "char_count",
+      "importance": 0.18797053089552115
+    },
+    {
+      "name": "avg_word_length",
+      "importance": 0.17923685028293518
+    },
+    {
+      "name": "model_DeepSeek V4 Flash",
+      "importance": 0.1456383744882848
+    },
+    {
+      "name": "word_count",
+      "importance": 0.049780243480433646
+    },
+    {
+      "name": "unique_words",
+      "importance": 0.04635768190961853
+    },
+    {
+      "name": "sentence_count",
+      "importance": 0.030347652928180775
+    },
+    {
+      "name": "reasoning_prompt",
+      "importance": 0.02387008069763148
+    }
+  ]
+}

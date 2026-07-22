@@ -17,6 +17,9 @@ env/
 .vscode/
 .idea/
 
+# CatBoost training logs
+catboost_info/
+
 # Generated outputs / analysis artifacts
 trial2/responses_batch*.json
 trial2/responses_analysis.csv

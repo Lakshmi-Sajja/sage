@@ -12,6 +12,8 @@ are directly comparable, and saves the fitted model. Classes are imbalanced
 (Excellent ~6% vs Average ~42%), handled via CatBoost's auto_class_weights.
 """
 
+import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 import pandas as pd
@@ -22,6 +24,7 @@ from sklearn.model_selection import train_test_split
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DATA_PATH = REPO_ROOT / "dataset" / "merged" / "model_b_quality_predictor.csv"
 MODEL_DIR = REPO_ROOT / "models" / "catboost"
+RESULTS_PATH = REPO_ROOT / "results" / "quality_predictor_catboost.json"
 
 NUMERIC_FEATURES = [
     "char_count", "word_count", "line_count", "sentence_count",
@@ -71,6 +74,7 @@ def main():
     acc = (preds == y_test.values).mean()
     macro_f1 = f1_score(y_test, preds, average="macro")
     print(f"Accuracy: {acc:.3f}   Macro F1: {macro_f1:.3f}\n")
+    report = classification_report(y_test, preds, labels=CLASS_ORDER, zero_division=0, output_dict=True)
     print(classification_report(y_test, preds, labels=CLASS_ORDER, zero_division=0))
 
     print("Confusion matrix (rows=actual, cols=predicted), order:", CLASS_ORDER)
@@ -88,6 +92,21 @@ def main():
     out_path = MODEL_DIR / "quality_predictor.cbm"
     model.save_model(str(out_path))
     print(f"\nSaved model to {out_path}")
+
+    RESULTS_PATH.parent.mkdir(exist_ok=True)
+    RESULTS_PATH.write_text(json.dumps({
+        "model_type": "catboost",
+        "task": "quality_predictor",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "train_rows": len(X_train),
+        "test_rows": len(X_test),
+        "accuracy": acc,
+        "macro_f1": macro_f1,
+        "classification_report": report,
+        "confusion_matrix": {"labels": CLASS_ORDER, "matrix": cm.tolist()},
+        "top_features": [{"name": n, "importance": float(i)} for n, i in top],
+    }, indent=2))
+    print(f"Saved metrics to {RESULTS_PATH}")
 
 
 if __name__ == "__main__":

@@ -10,6 +10,8 @@ are imbalanced -- Excellent is ~6% of rows vs. ~42% for Average), reports
 accuracy/macro-F1/per-class metrics, and saves the fitted pipeline.
 """
 
+import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 import joblib
@@ -24,6 +26,7 @@ from sklearn.preprocessing import OneHotEncoder
 HERE = Path(__file__).parent
 DATA_PATH = HERE / "merged" / "model_b_quality_predictor.csv"
 MODEL_DIR = HERE.parent / "models"
+RESULTS_PATH = HERE.parent / "results" / "quality_predictor_rf.json"
 
 NUMERIC_FEATURES = [
     "char_count", "word_count", "line_count", "sentence_count",
@@ -74,6 +77,7 @@ def main():
     acc = (preds == y_test).mean()
     macro_f1 = f1_score(y_test, preds, average="macro")
     print(f"Accuracy: {acc:.3f}   Macro F1: {macro_f1:.3f}\n")
+    report = classification_report(y_test, preds, labels=CLASS_ORDER, zero_division=0, output_dict=True)
     print(classification_report(y_test, preds, labels=CLASS_ORDER, zero_division=0))
 
     print("Confusion matrix (rows=actual, cols=predicted), order:", CLASS_ORDER)
@@ -95,6 +99,21 @@ def main():
     out_path = MODEL_DIR / "quality_predictor.joblib"
     joblib.dump(pipeline, out_path)
     print(f"\nSaved pipeline to {out_path}")
+
+    RESULTS_PATH.parent.mkdir(exist_ok=True)
+    RESULTS_PATH.write_text(json.dumps({
+        "model_type": "random_forest",
+        "task": "quality_predictor",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "train_rows": len(X_train),
+        "test_rows": len(X_test),
+        "accuracy": acc,
+        "macro_f1": macro_f1,
+        "classification_report": report,
+        "confusion_matrix": {"labels": CLASS_ORDER, "matrix": cm.tolist()},
+        "top_features": [{"name": n, "importance": float(i)} for n, i in top],
+    }, indent=2))
+    print(f"Saved metrics to {RESULTS_PATH}")
 
 
 if __name__ == "__main__":

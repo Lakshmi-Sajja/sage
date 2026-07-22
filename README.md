@@ -42,6 +42,20 @@ files are never modified in place.
      `train_quality_predictor_catboost.py` — CatBoost variants (native
      categorical handling), saved to `models/catboost/*.cbm`.
 
+7. **Predict** — `predict.py` (repo root) takes a raw prompt, runs it through
+   the same feature engineering, and prints the tokens/cost/quality table
+   above for every model seen during training. `--backend rf|catboost`
+   picks which trained family to use (default `catboost`). Cost is computed
+   from a hardcoded `PRICING` table in `predict.py` (not learned from data,
+   since the dataset has no pricing column) -- edit it to match real
+   provider rates.
+
+Each training script (both RandomForest and CatBoost variants) also writes
+its held-out metrics to `results/<task>_<family>.json` (MAE/RMSE/R2 for the
+token predictor, accuracy/macro-F1/classification report/confusion matrix
+for the quality predictor) so the two model families can be compared without
+re-running training.
+
 Run phases in order from `dataset/`:
 
 ```bash
@@ -53,6 +67,7 @@ python train_token_predictor.py
 python train_quality_predictor.py
 python ../models/catboost/train_token_predictor_catboost.py
 python ../models/catboost/train_quality_predictor_catboost.py
+python ../predict.py "your prompt here"
 ```
 
 ## Layout
@@ -60,10 +75,12 @@ python ../models/catboost/train_quality_predictor_catboost.py
 ```
 dataset/            pipeline scripts + data at each phase (raw_datasets -> cleaned -> merged)
 models/             trained model artifacts (RandomForest .joblib, CatBoost .cbm) + CatBoost training scripts
+results/            held-out eval metrics (MAE/RMSE/R2, accuracy/F1) per task and model family, as JSON
+predict.py           CLI: prompt in -> tokens/cost/quality table out, per trained model
 prompts/            held-out prompt lists used to generate/test data
 experiments/trial1/ early static token-counting + pricing prototype (superseded)
 experiments/trial2/ agent-loop token tracer + response/chat analysis prototype (superseded)
 ```
 
 `experiments/` holds earlier prototypes kept for reference; the active
-pipeline is `dataset/` + `models/`.
+pipeline is `dataset/` + `models/` + `predict.py`.

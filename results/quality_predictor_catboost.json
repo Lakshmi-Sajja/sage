@@ -1,0 +1,116 @@
+{
+  "model_type": "catboost",
+  "task": "quality_predictor",
+  "timestamp": "2026-07-22T20:36:17.136278+00:00",
+  "train_rows": 991,
+  "test_rows": 248,
+  "accuracy": 0.6129032258064516,
+  "macro_f1": 0.6281474317419822,
+  "classification_report": {
+    "Bad": {
+      "precision": 0.543859649122807,
+      "recall": 0.775,
+      "f1-score": 0.6391752577319587,
+      "support": 40.0
+    },
+    "Average": {
+      "precision": 0.6979166666666666,
+      "recall": 0.6203703703703703,
+      "f1-score": 0.6568627450980392,
+      "support": 108.0
+    },
+    "Good": {
+      "precision": 0.5538461538461539,
+      "recall": 0.45,
+      "f1-score": 0.496551724137931,
+      "support": 80.0
+    },
+    "Excellent": {
+      "precision": 0.6,
+      "recall": 0.9,
+      "f1-score": 0.72,
+      "support": 20.0
+    },
+    "accuracy": 0.6129032258064516,
+    "macro avg": {
+      "precision": 0.5989056174089069,
+      "recall": 0.6863425925925926,
+      "f1-score": 0.6281474317419822,
+      "support": 248.0
+    },
+    "weighted avg": {
+      "precision": 0.6186978962605024,
+      "recall": 0.6129032258064516,
+      "f1-score": 0.607388406092343,
+      "support": 248.0
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "Bad",
+      "Average",
+      "Good",
+      "Excellent"
+    ],
+    "matrix": [
+      [
+        31,
+        7,
+        2,
+        0
+      ],
+      [
+        13,
+        67,
+        27,
+        1
+      ],
+      [
+        13,
+        20,
+        36,
+        11
+      ],
+      [
+        0,
+        2,
+        0,
+        18
+      ]
+    ]
+  },
+  "top_features": [
+    {
+      "name": "model",
+      "importance": 51.05887970642359
+    },
+    {
+      "name": "char_count",
+      "importance": 13.292801239999603
+    },
+    {
+      "name": "avg_word_length",
+      "importance": 9.720357066576918
+    },
+    {
+      "name": "unique_words",
+      "importance": 6.784312040597656
+    },
+    {
+      "name": "word_count",
+      "importance": 6.224147733809122
+    },
+    {
+      "name": "reasoning_prompt",
+      "importance": 6.022333095406615
+    },
+    {
+      "name": "sentence_count",
+      "importance": 3.9757839688399583
+    },
+    {
+      "name": "creative_prompt",
+      "importance": 2.171316683890027
+    }
+  ]
+}

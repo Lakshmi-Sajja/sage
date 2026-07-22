@@ -12,6 +12,8 @@ train/test split as the RandomForest baseline so MAE/RMSE/R^2 are directly
 comparable, and saves the fitted models.
 """
 
+import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
@@ -23,6 +25,7 @@ from sklearn.model_selection import train_test_split
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DATA_PATH = REPO_ROOT / "dataset" / "merged" / "model_a_token_predictor.csv"
 MODEL_DIR = REPO_ROOT / "models" / "catboost"
+RESULTS_PATH = REPO_ROOT / "results" / "token_predictor_catboost.json"
 
 NUMERIC_FEATURES = [
     "char_count", "word_count", "line_count", "sentence_count",
@@ -66,6 +69,7 @@ def main():
 
     MODEL_DIR.mkdir(parents=True, exist_ok=True)
     models = {}
+    metrics = {}
     for target in TARGETS:
         model = build_model()
         model.fit(X_train, y_train[target])
@@ -75,6 +79,7 @@ def main():
         rmse = root_mean_squared_error(y_test[target], preds)
         r2 = r2_score(y_test[target], preds)
         print(f"{target:<15}{mae:>10.2f}{rmse:>10.2f}{r2:>10.3f}")
+        metrics[target] = {"mae": mae, "rmse": rmse, "r2": r2}
 
         out_path = MODEL_DIR / f"token_predictor_{target}.cbm"
         model.save_model(str(out_path))
@@ -87,6 +92,18 @@ def main():
         print(f"  {name:<35}{imp:.2f}")
 
     print(f"\nSaved models to {MODEL_DIR}/token_predictor_<target>.cbm")
+
+    RESULTS_PATH.parent.mkdir(exist_ok=True)
+    RESULTS_PATH.write_text(json.dumps({
+        "model_type": "catboost",
+        "task": "token_predictor",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "train_rows": len(X_train),
+        "test_rows": len(X_test),
+        "metrics": metrics,
+        "top_features": [{"name": n, "importance": float(i)} for n, i in top],
+    }, indent=2))
+    print(f"Saved metrics to {RESULTS_PATH}")
 
 
 if __name__ == "__main__":
