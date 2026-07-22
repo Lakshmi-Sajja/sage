@@ -1,0 +1,631 @@
+1. hey so my coach is kind of reluctant abt this whole thing, its not like a tournament kinda deal so he thinks we need more time to discuss it first. can u help me write this properly in english, like something polite i can send him without straight up saying no
+2. i have a group project meeting in an hour and i havent even opened the doc yet, can u give me like 4-5 talking points on data structures so i dont sound clueless
+3. my landlord keeps texting abt the rent being late even tho i already paid on the 3rd, help me write a message that clears it up without sounding rude
+4. ngl i dont fully get the difference between supervised and unsupervised learning, my prof explained it today but i kinda zoned out, can u break it down like im explaining it to a friend
+5. i just got this error when i ran npm install and i have no clue whats going on, can u tell me whats wrong: "ERESOLVE unable to resolve dependency tree"
+6. my friend asked me to review her resume before she sends it out tomorrow morning, i dont really know what recruiters look for, what should i tell her to fix
+7. so basically i have 200 in my account and rent + groceries this week is gonna be tight, can u help me figure out a rough budget so i dont overspend
+8. can u explain what machine learning even is, like not the wikipedia definition, just in normal words cus my little cousin asked me and i blanked
+9. i wanna message my professor asking for an extension on the assignment but i dont wanna sound like im making excuses, can u help me phrase it
+10. my team lead wants a status update by eod and honestly we're behind schedule, help me write something that's honest but doesnt sound like im panicking
+11. so i just bombed a job interview i think, they asked me abt system design and i froze, can u explain how i shouldve approached that question
+12. i have a presentation tmrw on neural networks and i still dont fully understand backpropagation, can u explain it simply with like an example
+13. my mom keeps asking why i havent called in a while and honestly ive just been busy w exams, help me write a text that doesnt sound dismissive
+14. i think my code has a memory leak but i cant find where, can u look at this and tell me what might be causing it: a python script that appends to a global list inside a loop that runs forever
+15. can u help me write a caption for a photo of my team after we won a small hackathon, wanna sound proud but not cringe
+16. i keep mixing up TCP and UDP in my head, can u explain the actual difference in a way that'll stick this time
+17. my roommate keeps leaving dishes in the sink and its been like a week now, help me write something to say to him that isnt gonna start a fight
+18. i have to explain what an api is to my non tech friend who thinks im just "clicking buttons all day", how do i put it simply
+19. so i wanna switch my major but i havent told my parents yet cus i know theyll freak out, can u help me think through how to bring it up
+20. can u help me understand what a hash table actually is, like why its faster than just looping through a list
+21. i just got some feedback on my essay saying its "too vague" but i dont get what that means exactly, can u help me figure out how to make it more specific
+22. we're planning a trip for like 4 people on a tight budget, can u suggest how we should split up planning tasks so nobody does everything
+23. my sister is stressed abt her thesis defense next week, what are some general questions committees usually ask so i can help her prep
+24. i accidentally sent a half finished email to my manager, help me write a quick follow up that doesnt make it a bigger deal than it is
+25. can u explain what a rest api is, i keep hearing it in interviews but i just nod along and dont actually get it
+26. so my code works on my laptop but breaks the second i push it, is that usually an environment thing or am i missing something obvious
+27. i wanna ask my professor if i can redo a quiz i did badly on but i dont wanna sound entitled, can u help me word it
+28. can u explain gradient descent using like a hiking analogy or something, the math notation my textbook uses isnt clicking
+29. my friend group is planning a birthday thing for someone and i got assigned "figure out the venue" with zero budget info, what should i even ask them first
+30. i think i need to set boundaries with a coworker who keeps dumping their tasks on me but i dont wanna come off as difficult, help me think this through
+31. explain what cloud computing actually means, i keep telling people "it's just someone else's computer" but i feel like thats not the full picture
+32. i have an exam tomorrow on databases and i still dont get normalization, can u explain 1nf 2nf 3nf without making it more confusing
+33. my partner and i keep arguing abt chores, can u help me write out a fair way to split them that i can actually bring up calmly
+34. can u help me understand what overfitting means, my model does great on training data but terrible on anything new and i dont get why
+35. i wanna dm a professor i dont know asking if i can shadow their research, how do i not sound like im just spamming everyone
+36. so we're building a small app and i need to explain to my non technical teammate why we need a database instead of just a spreadsheet
+37. can u help me write a short bio for my linkedin, i dont wanna sound like every other generic profile
+38. i just realized i double booked myself for two things saturday, help me draft a message to back out of one without burning a bridge
+39. explain what an algorithm actually is in a way that doesnt sound like a textbook, my little brother has a school project abt it
+40. i think my teammate isnt pulling their weight on the group assignment but i dont wanna be the one who "snitches" to the prof, whats a better way to handle it
+41. can u break down what encryption actually does when i send a message, like whats really happening behind the scenes
+42. i wanna ask for a raise but i havent done this before, can u help me figure out how to bring it up with my manager
+43. explain the difference between a compiler and an interpreter, i always forget and it comes up in every interview somehow
+44. my grandma wants to video call but i have a deadline in 2 hours, help me write something sweet to reschedule without hurting her feelings
+45. can u explain what version control is to someone who's never touched code but is joining our team as a designer
+46. i totally forgot my friends bday is this weekend, help me come up w a last minute but still thoughtful gift idea, budget is like 20 bucks
+47. whats the actual difference between a stack and a queue, i keep forgetting which one is fifo and which is lifo
+48. i need to tell my group that i cant make the meeting time they picked, help me suggest alternatives without sounding difficult
+49. can u explain what recursion is using something that isnt the fibonacci example, everyone uses that one and it never clicks for me
+50. my professor said my code "works but isnt efficient", can u explain what makes code efficient in simple terms
+51. i wanna check in on a friend who's been kinda distant lately without making it sound like an interrogation, help me word a text
+52. explain what a firewall actually does, i just say "it blocks bad stuff" when people ask but that feels too vague
+53. i have leftover rice, eggs, and some veggies in the fridge, can u suggest something quick i can make for dinner
+54. can u help me write a polite reminder email, i sent an invoice two weeks ago and havent heard back
+55. whats the difference between authentication and authorization, i mix them up every single time in interviews
+56. my little cousin asked me why the sky is blue and i didnt actually know, can u explain it simply enough that a 10 year old gets it
+57. i need to decline a group project role i got assigned without seeming like im not a team player, any suggestions on how to phrase it
+58. can u explain what an api rate limit is, my app keeps failing and someone said thats probably why
+59. i think i need to apologize to a friend for something i said when i was stressed, help me figure out how to start that conversation
+60. explain what big o notation actually tells you, i can memorize the examples but i dont get what it means in practice
+61. my landlord wants to raise rent and i wanna push back a bit but stay respectful, help me think through what to say
+62. can u explain what a load balancer does, in my interview prep it keeps coming up and i just skip past it every time
+63. i wanna plan a surprise for my parents anniversary but they live far and i cant be there, any ideas that dont feel lame over distance
+64. whats the actual difference between sql and nosql databases, when would someone actually pick one over the other
+65. i missed a deadline for a scholarship application because of a family thing, help me write an email explaining and asking if theres any flexibility
+66. can u explain what containers are (like docker), i keep hearing "it works on my machine" jokes and now i get why but not really how
+67. my roommate's friend has basically been staying over every weekend and its starting to bother me, how do i bring this up without it being awkward
+68. explain what an interrupt is in computer architecture, my professor moved through it so fast i didnt catch any of it
+69. i wanna give feedback to a junior teammate on their code without sounding harsh, they're new and i remember how that felt
+70. can u explain the cap theorem in a way that doesnt need a whiteboard, i just need the gist for an interview tomorrow
+71. i think i need to set a boundary with my parents abt how often they call during work hours, help me figure out how to say it kindly
+72. whats the difference between a process and a thread, i always confuse them when explaining to people
+73. i have to write a thank you note to someone who wrote me a recommendation letter, help me make it sound genuine not generic
+74. can u explain what garbage collection means in programming, i know it "cleans up memory" but not actually how
+75. my friend wants to borrow money again and i already lent them some last month, help me figure out how to say no this time
+76. explain the difference between latency and bandwidth, i always get them backwards
+77. i need to write a caption for our team photo after we shipped our first feature, wanna sound proud without being cringe about it
+78. whats a race condition actually, i keep hearing it blamed for bugs but i dont get what causes it
+79. i wanna ask my mentor for more frequent check ins but i dont wanna seem needy, help me word this
+80. can u explain what dns actually does when i type a website into my browser
+81. my group chat is planning something for new years and i genuinely cant afford to go this year, help me say that without it being weird
+82. whats the difference between a framework and a library, people use them interchangeably and it confuses me
+83. i think i said something insensitive in a meeting without realizing, should i address it directly or let it go
+84. can u explain what an index does in a database, like why it makes queries faster
+85. my sibling and i havent talked in a few weeks after a dumb argument, help me write the first message to break the silence
+86. whats the actual difference between http and https, i know one has a lock icon but not why that matters
+87. i wanna ask a professor to be a reference for grad school but i only took one class with them, is that weird to ask
+88. can u explain what caching is, my app got way faster after someone added it and i wanna actually understand why
+89. my partner's family invited me to something big and i havent met most of them yet, help me figure out how to not seem awkward
+90. whats the difference between a bug and a vulnerability, my manager used both today and i wasnt sure if they meant the same thing
+91. i need to tell my study group i wanna change our meeting spot cus the current one is always too loud, how do i bring it up
+92. can u explain what an event loop is in javascript, i keep hearing "non blocking" and nodding along
+93. i think my resume is too long at 2 pages but i dont know what to cut, can u help me think through what actually matters
+94. whats the difference between a class and an object, my intro to programming class explained it weird and it never stuck
+95. i wanna check in with my manager abt my growth this year before my review, help me figure out how to start that conversation
+96. can u explain what a memory leak actually is in code terms, not just "it uses too much memory"
+97. my friend keeps cancelling plans last minute and it's starting to bother me, help me figure out how to bring it up without sounding petty
+98. whats the difference between concurrency and parallelism, i always thought they were the same thing
+99. i have to write a short intro for myself before a networking event tomorrow and i freeze up every time, help me draft something natural
+100. can u explain what technical debt actually means, my team keeps saying "we'll fix it later" and i wanna understand what im agreeing to
+101. whyd o u want to join codess in 250 words
+102. Maintain the tone, but summarize it a bit.
+103. hey i wnat to know what alla re the existing slutions fr skin disease detection using cnn,i mean the projects for cnn models focusing on some specific diseases
+104. I have done some working on performing or choosing of many projects in the healthcare domains, which adds a lot of weight to the resume, and we want to find which actually works in the healthcare domain that stands out in the resume, and which companies are actually looking for healthcare projects that can help in having these kind of projects can help in easy retrieval for those companies. Could you please suggest a few of the projects and the companies which can be associated who want to be standout? The level can be intermediate to advanced, tech stack can be used in Python language. Yeah.
+105. now we are actually going to work with a mini project. We want to check out what are the papers required, so what is it as air quality index reduction and air quality index predictor based on the air quality index criteria based on the data, what are the heat map insights required for this particular area. So and any, if possible, any reduction techniques so that we can reduce the air quality index and any changes. So we want to make a particular mini project, so I want you to give me a detailed analysis of the pros, cons, and what is the scope of the project? Are there any existing solutions for this? What all are the resources required for this particular project? And I would like you to give me a realistic, typical plan within four weeks to complete the project. So the tech stack will be used in this obviously Python as we're using AI and ML integrations with even in ML integrations, we will be taking only numerical datasets. And also I would like to know what all are the datasets are there, what is the entire, what is the entire, planning steps involved to build this project successfully? And what is the scope, which of the SDGs goals it aligns to, and in which case, and what is the probability that this project stands out and what all we have to do to make this project stand out?
+106. code djikstrs using priority ueuue
+107. i need  forml mil etiuette for sending mil for the proejt submisiion to the comony recruiter
+108. tech events their venue timings prices and cash prizes ke this is  title for ggle sheets
+109. hey chatgpt i wold like u to help me in finding the burining industraila problme statemnets whoch will also come under sdg goals and asloooo those need to be hel in detection methods using AI and ml only i ssoftware for minor porjects p.s please for each of thes tatement attach the research paperdso that I can also refer
+110. could u do dily time tble nd 45 dy exct tpiv rodmp
+111. for this gimme the acheivements what i have mentiorned in resume so will add in google form Sac technical head also add at alst"
+112. hey i need you to write or ddrft mil to the swiggy suppprt regrding receiving worng order nd the items we hve received re shirvd multi grin t penuts pcket nd kinder joy bueno where we hve ordered pilsbury tt of 5kg pck nd oil pckets 2 So now i wnt to esclte the issue give me strict nd cut throgh mil
+113. I'm a little beginner of technicals, so I would like you to give me some basics content on. I would like to know first exactly what does backend mean? How is it helping out? How backend helps in creating web? What is the role of backend? I mean, front-end is used for visualization. How exactly backend is? And what is the purpose of database? How database helps in fetching? You know, this whole SD, so much, frontend, backend, stack, all these words are fancy words. I don't exactly know what it does. As I get the breakdown each of the words, I can try helping out myself. Help me out this.
+114. how to build it sing llm gimme structured prompt
+115. "I'm a final year AI & ML student. Create a complete roadmap from where I am today to becoming an AI Engineer. Tell me what to learn, what to skip, projects to build and an estimated timeline."
+116. "Explain Agentic AI from absolute scratch. Assume I know nothing. Cover memory, planning, reasoning, tool calling, MCP, LangGraph, LangChain, CrewAI and how everything fits together."
+117. "If I wanted to build my own AI agent today, what would the complete architecture look like? Explain frontend, backend, vector databases, memory, orchestration and deployment."
+118. "Teach me Retrieval Augmented Generation (RAG) from scratch. Explain embeddings, chunking, vector databases, retrieval, reranking and when RAG should or shouldn't be used."
+119. "How do Large Language Models actually work internally? Explain transformers, attention, tokenization, embeddings, inference and fine-tuning like you're teaching an engineering student."
+120. "Make me a complete AI Engineer interview preparation roadmap for the next three months with weekly goals."
+121. "I'm preparing for placements, not FAANG. Give me only the DSA topics and questions that actually matter for companies like Visa, UBS, HSBC and Flipkart."
+122. "Teach me Dynamic Programming in the easiest possible sequence starting from recursion and memoization."
+123. "Explain the Sliding Window pattern so well that I can identify those questions in interviews without memorizing solutions."
+124. "Review my resume like you're an SDE recruiter. Be brutally honest and tell me exactly what should be improved."
+125. "Explain Spring Boot project architecture used in production applications. Cover controllers, services, repositories, DTOs, entities, exception handling and authentication."
+126. "Teach me Multi-Tenant SaaS architecture from scratch. Compare database-per-tenant, schema-per-tenant and shared database approaches."
+127. "Explain Redis like I'm a beginner. Why do companies use it? Where does it sit in the system architecture?"
+128. "Compare PostgreSQL and MySQL for startups. Which one should I choose and why?"
+129. "Explain how Stripe works behind the scenes. Cover payment flow, subscriptions, webhooks, refunds and security."
+130. "Act like an investor and brutally evaluate my startup idea. Tell me whether it's worth building or not."
+131. "Analyze my startup A2S completely. Market size, competitors, monetization, pricing, MVP, customer acquisition, risks and scalability."
+132. "Create a pitch deck outline that would actually impress an investor."
+133. "Help me decide what features belong in my MVP and what should be postponed."
+134. "If you were my CTO, create a six-month product development roadmap for my startup."
+135. "Research the Visa internship hiring process in detail. What rounds are there? What DSA level do they expect? What projects help?"
+136. "Explain the Flipkart GRiD internship process in detail and what happens after each round."
+137. "Create a realistic CAT preparation plan while balancing engineering placements."
+138. "Compare taking a high-paying software job versus pursuing an MBA over the next ten years."
+139. "Teach me how to write a proper research paper from literature review to publication."
+140. "Build me a cybersecurity roadmap for beginners covering networking, Linux, web security and penetration testing."
+141. "Explain Authentication vs Authorization with JWT, OAuth, cookies and sessions using practical examples."
+142. "Teach me System Design from absolute scratch with real-world examples."
+143. "Explain Docker and containers from scratch. Why do companies actually use Docker?"
+144. "Compare AWS, Azure and Google Cloud for students and startups. Which one should I learn first?"
+145. "Help me design an AI-powered Chrome extension that simplifies complicated webpages. Cover architecture, APIs, UX and monetization."
+146. "Compare Flutter and Streamlit for building startup MVPs."
+147. "Explain the difference between Kindle publishing and traditional publishing in India for first-time authors."
+148. "Help me identify a book using only the parts of the story I remember."
+149. "Explain B12 deficiency completely. What symptoms are common, when is dizziness related and when should someone worry?"
+150. "Analyze this cricketer beyond statistics. Explain technique, strengths, weaknesses, captaincy, fitness and future potential."
+151. "Prepare a complete market research report for this startup idea including TAM, SAM, SOM, competitors, trends and barriers to entry."
+152. "I want to learn this topic properly. Give me the correct order to study it, projects to build, common mistakes, interview relevance and how long each stage should take."
+153. "Act as an experienced startup founder and tell me everything that's wrong with my business model before I spend months building it."
+154. "If you had to mentor me from scratch for software engineering placements, what would the next 90 days look like?"
+155. "Compare these two technologies in terms of scalability, learning curve, community support, industry adoption and future scope."
+156. "Explain this research paper like I'm an engineering student. Break down every section into simple language."
+157. "Create a step-by-step implementation plan for this project from idea to deployment."
+158. "Tell me the prerequisites I should learn before starting this technology so I don't waste time."
+159. "Assume you are a hiring manager. Based on my skills, what gaps would stop you from shortlisting me?"
+160. "If this startup were presented on Shark Tank or to a VC, what questions would they ask and how should I answer them?"
+161. "Research the latest industry trends in this field and tell me where the biggest opportunities are over the next five years."
+162. "Explain this concept visually and intuitively instead of giving textbook definitions."
+163. "Create the ultimate beginner-to-advanced roadmap for this subject with free resources, projects and milestones."
+164. "I'm confused between multiple career paths. Compare them based on salary growth, work-life balance, learning opportunities, long-term stability and future demand."
+165. "I have this startup idea. Don't just appreciate it. Tear it apart, tell me every loophole, every risk, every competitor and whether it can actually become a unicorn."
+166. "Assume you're an investor from Sequoia or Y Combinator. Ask me every question you would before investing."
+167. "I don't want generic market research. I want actual numbers, TAM, SAM, SOM, CAGR, competitors, revenue models and future trends."
+168. "Compare my startup idea with every similar company in India and abroad. Tell me what is unique."
+169. "If someone had ₹25 lakh today, how should they build this startup from scratch?"
+170. "Design the complete tech stack for this startup as if Google engineers were building it."
+171. "Give me every AI feature that can be added to this product in the next five years."
+172. "Suppose OpenAI built my startup instead of me. What would they do differently?"
+173. "Tell me why this startup could fail before even launching."
+174. "Research whether customers actually need this or if I'm solving a fake problem."
+175. "Find industries where AI hasn't disrupted much yet."
+176. "What billion-dollar startups can still be built in India using AI?"
+177. "Give me startup ideas that are difficult to copy."
+178. "Research business models that make recurring revenue instead of one-time income."
+179. "I want industries that will grow for the next 20 years."
+180. "How do companies like Airbnb, Uber and Zillow actually became successful? Break everything down."
+181. "Give me hidden problems in the real estate industry that nobody talks about."
+182. "Research the future of interior design and AI."
+183. "What technologies will replace current real estate platforms?"
+184. "I want to know if my startup can become global instead of staying India-focused."
+185. "Pretend you're McKinsey. Give me a complete industry report."
+186. "Pretend you're BCG. Find every weakness in my business."
+187. "How would Amazon solve this problem?"
+188. "How would Apple design this product?"
+189. "Tell me whether an MBA from IIM Ahmedabad is actually worth it compared to staying in tech."
+190. "Research career paths where AI and MBA together have the highest salaries."
+191. "Compare Applied Scientist, ML Engineer, Data Scientist and SDE in terms of future growth."
+192. "What skills will still matter after AI automates programming?"
+193. "Give me a roadmap to become an Applied Scientist."
+194. "Research companies that are investing the most in Generative AI."
+195. "Tell me which AI startups are most likely to become the next OpenAI."
+196. "I want papers, research directions and unsolved problems in AI."
+197. "Explain this research paper like I'm a college student but don't skip technical details."
+198. "What projects should I build if I want recruiters to think I'm exceptional?"
+199. "Research how founders got into Y Combinator without having funding."
+200. "Give me every possible monetization strategy for this product."
+201. "Find startup incubators in India that actually help early founders."
+202. "Research how companies price SaaS products."
+203. "If I had to pitch this to investors in five minutes, what questions would destroy me?"
+204. "Give me a competitive analysis with strengths, weaknesses, opportunities and threats for my startup."
+205. i am studying in aiml 4th year, and i have to give a speech tomorrow to my sub juniors who just joined aiml i.e the 2nd year students
+206. can i remove or edit my application in cisco code with ciscoo
+207. Predicate Argument Structure(PAS,CCG,PSG), Meaning Representation detailed 10 mark answers
+208. best team names for amazon hackon
+209. mongodb setup in mac apple m2 pro
+210. Query all columns for all American cities in the CITY table with populations larger than 100000. The CountryCode for America is USA.
+211. https://jobs.careers.microsoft.com/global/en/job/1901632/Research-Science:-Internship-opportunities
+212. in the video, should i just speak, or can i make editings of the video so that pictures can be added
+213. Given a string s, check if it can be constructed by taking a substring of it and appending multiple copies of the substring together.
+214. can u give me a dataset for sentiment analysis to train a model
+215. Wt is  the difference between stack and queue with real-life examples and C code.
+216. give me 10 top rated books in world from different genre
+217. Second Largest Unique Element c code .
+218. Which app is best spotify or apple music.
+219. Explain binary search with an example, dry run, and time complexity.
+220. Binary search.
+221. Give me 20 SQL interview questions with answers suitable for beginners.
+222. give me medium level questions in python
+223. Write a LinkedIn post about completing my first coding challenge and what I learned from
+224. Compare programming languages.
+225. Merit and demirits of writing my classwork with only black pen instead of blue
+226. Explain pointers in C with examples .
+227. My Amazon q isn't working : bash <(curl -fsSL https://desktop-release.q.us-east-1.amazonaws.com/latest/install.sh)
+curl: (22) The requested URL returned error: 403
+228. Heyyyyy explain the working of a p-n junction diode with a neat diagram and simple language.
+229. hey generate the vague prompts you have seen
+230. Best places to visit in Hyderabad for my Sunday outing only (10am-5pm)
+231. #include <stdio.h>
+
+int main() {
+    int guess;
+
+    printf("Enter a number: ");
+    scanf("%d", guess);
+
+    if (guess = 7) {
+        printf("You guessed the secret number!\n");
+    } else {
+        printf("Wrong guess!\n");
+    }
+
+    return 0;
+}
+
+Tell me the mistakes in the code.
+232. Things I can do in my free time .
+233. Write a c++ program on two sum (leet code)
+234. explain me this code step by step.
+
+import java.util.Scanner;
+
+public class DiamondPattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of rows for the top half: ");
+        int n = scanner.nextInt();
+                for (int i = 1; i <= n; i++) {
+                        for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+                        for (int k = 1; k <= (2 * i - 1); k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+                for (int i = n - 1; i >= 1; i--) {
+            // Print leading spaces
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
+235. How to change username in GitHub ?
+236. whre do i find nice templates for my latex
+237. simplest way to learn vscode
+238. what are the best anime available on jiohotstar and Netflix?
+239. how many r's are there in strawberry
+240. suggest horror comedy movies in English.
+241. What's loremipsum explain it clearly.
+242. Explain the difference between a stack and a queue with real-life examples. Also provide a Java implementation for both.
+243. I'm preparing for my Data Structures exam. Can you explain binary search trees in simple language and include the insertion and deletion algorithms?
+244. Write short notes on the Waterfall Model, Agile Model, and Spiral Model. Compare them in a table and mention where each is used.
+245. Explain how reinforcement learning works. Give one real-world example and one Python implementation using a simple environment.
+246. What are the advantages and disadvantages of cloud computing? Explain IaaS, PaaS, and SaaS with examples.
+247. A company wants to reduce customer churn using machine learning. Describe how you would approach this problem from data collection to evaluation.
+248. Design an algorithm to find duplicate values in a list containing one million integers while minimizing memory usage.
+249. Write a professional project report introduction for a "Smart Traffic Management System using AI."
+250. Create a presentation outline for a seminar on Cybersecurity Trends in 2026.
+251. Summarize the IEEE paper on Vision Transformers in language suitable for second-year engineering students.
+252. Explain Git branching strategies suitable for a software development team working on a college project.
+253. Write a Java program to find the second largest element in an array without sorting it. Explain each step of the code.
+254. I wrote this Python code to reverse a linked list, but it gives an error. Find the mistake and correct it.
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+255. Compare Python lists and tuples. Include syntax, performance, mutability, and practical use cases.
+256. Write a C program to implement a circular queue using arrays. Explain the time complexity of each operation.
+257. Generate a SQL database schema for a college management system with students, faculty, courses, and attendance tables.
+258. Convert the following Java code into C++ and explain the major syntax differences.
+259. Explain photosynthesis in simple terms for a 10-year-old.
+260. List the days of the week in Spanish, German, and Arabic.
+261. Translate the following sentence into Spanish: *"The future belongs to those who prepare today."*
+262. Repeat the word "hello" 20 times separated by spaces.
+263. List five advantages and five disadvantages of remote work.
+264. Write a Python function to check whether a string is a palindrome.
+265. Explain the time complexity of binary search.
+266. Create a weekly study plan for learning C++ in one month.
+267. Write a two-line poem about the ocean.
+268. Solve the following mathematical problem step by step: 33.33% of 600
+269. Compare SQL and NoSQL databases.
+270. Generate five interview questions for a Frontend Developer role.
+271. Write a polite email requesting a meeting with a manager.
+272. Who wrote "Pride and Prejudice" and when was it published?
+273. Explain recursion using a real-life analogy.
+274. What causes a solar eclipse?
+275. Suggest three creative names for a food delivery startup.
+276. Describe the lifecycle of a butterfly using bullet points.
+277. A farmer has 17 sheep, all but 9 run away. How many are left?
+278. Write three SQL queries to retrieve employee data based on different conditions.
+279. Why is the sky blue in colour?
+280. Explain the difference between HTTP and HTTPS.
+281. Compare the difference between mitosis and meiosis.
+282. Write a short product description for a wireless keyboard.
+283. Continue the following story in no more than 200 words: *"A mysterious letter arrived on my doorstep one rainy evening..."*
+284. How do I improve my home's Wi-Fi security?
+285. What should I do if I forgot my email password?
+286. How to cure fever at the earliest?
+287. Convert the number 123456789 into words.
+288. Count how many vowels are in this sentence: "The quick brown fox jumps over the lazy dog."
+289. Take an existing app and do this for each role like for a tester,  2 developers,scrum master,tech lead in an meeting discussing in a for an formal meeting with exel and dialogues using user stories kanban and etc
+290. What is the role of a tester in a corporate world we have a project were we need to divide into teams of 8 3 Dev 2 testers 1 po 1 qs 1 scrum masteri am one of the tester my mam was like suppose if you have a project I need to take a role and make a table or excel sheet regarding that work like for scrum master need to plan all use stories maintain exel for everything using Kanban etc to be an poc proof of concept for devops now tell me as a tester what I should have and do and track
+291. Interview question tell me about yourself
+292. My coach is somewhat feeling reluctant abt this as this is not a tournament kind of thing we need some time to discuss abt this Use proper English in this my coach is like let's see what should o tell that without actually saying no
+293. Thanks for the invite! My coach and I are actually in the middle of planning out our next few weeks, so we need a little time to look into this and discuss it. I'll get back to you as soon as we've had a chance to chat More casual way
+294. How to deploy a Nydus project which is in GitLab and currently using Docker in a server which is provided by my college?
+295. How to convert to lower or upper other thing and how to check if it is lower upper or other thing
+296. Hey give each and every possible building function which can be used to solve substrings and subarray problems in cpp not just built in how to use them what they will return and common patterns used to solve those questions and when to use when and how to use
+297. Introduction: Data mining, Kinds of data to be mined, Kinds of patterns to be mined, Technologies used, Applications of data mining, Major Issues in Data Mining. Explain these topics in detail
+298. i want the most unique non answerable answer to a philosiphical question as a problem statement to a hackathon
+299. Hey suggest any page or website or video to learn graph theory let's select a single topic in it today and dive deeper into it
+300. Explain the Seven Bridges of Königsberg puzzle, how to draw it on a blackboard, and how Euler solved it using graph theory.
+301. Hey currently I have access to a black board to tell a topic or subject which helps me later to learn now which looks and feels super cool to learn through black board
+302. hey discribe the best ui for it 1st lets take a colour pallate and make a clean professional ui
+303. Hey do you have any idea about begin infinity  auto suggest page check in GitHub
+304. So what will be the step count table for this recursion thing
+305. How to find time complexity of a statement using step count table
+306. Hey explain the concepts of daa algorithm,performance analysis space complexity daa means daata analysis of algorithms
+307. Hey o want to draw my vision board personal ,academic,hobbies,interest's,long term goals,etc to motivate myself how should I have few charts white and colour pencils sketches and etc help me in designing my vision board where should I keep what and in what way i should keep I want to draw few things o want to paste few things it shouldn't be clumsy or matter is stuffed it should look near beautiful help me design it
+308. Hey for the rearrange sequence 3 pattern if you got 1 1 2 3 3 4 these have the adj elements just 1 greater so the rearranged max len sequence would ve 5
+309. How to use Hashmat in cop to find the string compression
+310. hey when i am trying to connect my laptop to my tv i have hdmi line it is showing source is detected at hdmi1 and when i have went to hdmi1 its showing no signal why ,by the way the device is on
+311. what is the one of the new language 26 CM Microsoft in Google so they are working of this and after carbon
+312. I have a friend of mine who have completed 130 questions in leetcode and I have currently completed 30 questions in leetcode with a lot of struggle I don't know why I also want to complete 130 questions in leetcode and how should I and see us like I am kind not motivate me
+313. main.pack(fill='both', expand=True, padx=20, pady=20) explain this to a non coder
+314. main.pack(fill='both', expand=True, padx=20, pady=20) explain this in detail
+315. what does electro Luminous means
+316. give me a essay on terrorism which is neat and which is of two or three paragraph using simple words
+317. why Helium neon gas laser is called as 4 level
+318. hey Gemini suggest me a song which explains my life now which is a very hectic the busy though I like it but it's so he take I don't know what I feel suggest me a good English song for it please
+319. I want to spend more time with my friends and family. How can I use you to be more productive?
+320. how should I make my Bangs look straight without using heat
+321. how should I eat my avocado means in what way how to cut it how to eat easily
+322. COA Assignment - 2
+323. Booths Algorithm
+324. Peripheral Devices
+325. Modes of Transfer
+326. Explain the concept of Arithmetic Pipeline with an example.
+327. Describe different types of interconnection structures used in multiprocessors. Answer these
+328. I'm a part of some professor of practice from IIT who is coming to our college today.
+Help me with an introduction if he asks.
+329. If a person is wearing a watch in their right hand instead of left (they are right handed).
+What does it say about them?
+330.  WHY WOULD I WRITE THE QUALITY.I HAVE A FILE - USE AND
+  ASSISTANT. THAT IS IT. THE TOOOL BUILT HAS TO GIVE modelname
+  INOUT OUTPUT AND THE QULity as i mentioned above! these are
+  simple instrutctions!
+331. given @trial2/test_prompt_answers/ please help me develeop a
+  tool that gives me a csv of [Model name | prompt | input
+  token | output token | quality Category | Feedback] where in
+  (Model name - claude opus. you can refer other legacy
+  models under this folder.
+332. can you make another simple file where i could do this over
+  all the files under @test_prompt_answers/ . and also have
+  the result stored into one csv team11.csv
+333. can you please compare @trial1/ and @trial2/ and give me
+  your opinion on it
+334. great, so what i am trying to aim at is a "a machine
+  learning model when given a prompt is able to identify the
+  trade Offs with respect to various models and help
+  understand  "This fellow is likely to cost you this good and
+  bad across different models"" can we achieve that. if so,
+  how?
+335. Hands-on learning using Google Cloud Generative AI tools
+336. Exposure to Vertex AI, Gemini API, Prompt Engineering, RAG, Vector Search, LangChain, MLOps, and more
+337. Digital badges after each module
+338. Guided learning and support from certified L4G experts
+339. Access to the 4Campus learning and tracking platform
+340. Real-world projects and internship support for students
+Courses to be Completed:
+341. Introduction to Generative AI
+342. Gemini for Google Cloud (Optional)
+343. Generative AI for Developers
+344. Generative AI Leader
+[Registration form fields with academic details] [...]
+ 
+345. OpenText is visiting my college for placements. Here is the job description.
+Please analyze it and tell me:
+1. A brief overview of OpenText (what the company does, products, market position, and work culture).
+2. The locations where this role is typically based and the major OpenText offices in India.
+3. How working at OpenText would add value to my career as a Software Engineer/AI Engineer.
+4. The skills, technologies, and qualities OpenText usually looks for in candidates.
+5. My strengths and experiences that would align well with OpenText.
+6. Potential gaps or weaknesses I should address before the recruitment process.
+7. The key do's and don'ts during the hiring process and interview.
+8. Expected interview rounds, commonly asked technical topics, and preparation strategy.
+9. Salary, growth opportunities, work-life balance, and long-term career prospects.
+10. A final verdict on whether this is a good opportunity for someone targeting Software Engineering, AI/ML, or Product-based company roles.
+Please be candid and provide both advantages and disadvantages of joining OpenText.
+ 
+346. Help me fix my code
+ 
+347. (follow-up message — empty/blank)
+ 
+348. Yes please
+ 
+349. Help me understand this question. As if I am 15 year old kid
+ 
+350. Help me out
+ 
+351. Can't you use my method?
+ 
+352. can you go through all my chats>
+ 
+10. alright just so you know. i [message truncated in retrieval]
+ 
+11. This is a random problem I'm trying to solve. Help me fix the code
+ 
+12. https://github.com/mem0ai/mem0/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22
+PLEASE TELL ME IF THESE ARE SOLVABLE AS A DAMN BEGINNERR TO TECHHEPR
+ 
+13. Tell me everything I need to know about deep learning please (mainly for interview test purpose for OpenText)
+ 
+14. https://github.com/dair-ai/ml-course-notes
+PLEASE GIVE ME MCQS FOR OPENTEXT FROM THIS CONTENT.
+For each topic please make atleast 25 questions per topic
+ 
+15. I want to prepare specifically for the Visa ML + INTERVIEW + OA + FULL PACKAGE + FULL STACK + SDE and create a single Google Sheet that serves as my complete preparation tracker.
+Research the web thoroughly and consolidate information from reliable sources (interview experiences, coding platforms, company-specific discussions, preparation guides, and community recommendations).
+Structure the Google Sheet into two worksheets:
+Worksheet 1: Core Computer Science
+Include every important topic that Visa commonly tests, organized into categories with subtopics. Cover areas such as: Data Structures, Algorithms, OOP, Operating Systems, DBMS, SQL, Computer Networks, System Design, LLD, Complexity Analysis, other CS fundamentals, MACHINE LEARNIGN, NLP, DEEP LEARNING, GENERATIVE LEARNING, RL, GAN. For each topic include: Topic, Subtopics, Importance (High/Medium/Low), Resources.
+Worksheet 2: DSA & Problem Solving
+Create a comprehensive roadmap of all DSA topics and problem patterns that could appear in Visa interviews AND OA MAINLY. For each topic include: Core concept, Problem patterns/models, Common interview question types, Important algorithms, Edge cases to know, Recommended practice problems, Frequency in interviews, Resources. Categories include (not limited to): Arrays, Strings, Hashing, Two Pointers, Sliding Window, Prefix Sum, Binary Search, Sorting, Recursion, Backtracking, Stack, Queue, Linked List, Trees, BSTs, Heaps, Tries, Graphs, DP, Greedy, Bit Manipulation, Math, Intervals, Union Find, Segment Trees, Fenwick Trees, Monotonic Stack/Queue, Topological Sort, Shortest Path, MST, BFS/DFS, Top Interview Patterns.
+The goal is to build the most comprehensive ANY DAMN JOB CRAKING TRacker possible, ensuring no important topic or problem pattern is missed. Prioritize topics based on interview frequency and include high-quality learning resources for every section.
+MAKE SURE THE GOOGLE SHEET IS EASY TO MAINTAIN AND NOT VERY DRAINING TO LOOK AT. USE TABLES. DROP DOWNS AND COLORS TO MAKE IT LOOK APPEALING. USE THE THEME OLD MONEY BUT SUBTLE
+ 
+16. please help me fix this Skip to content
+TruptiAgrawal
+User navigation
+Overview / Repositories 29 / Projects / Packages / Stars 4
+Trupti Agrawal · she/her · 1 follower · 6 following · Hyderabad, India · truptiagrawal777@gmail.com
+Achievements: Pull Shark
+PinnedLoading — Learning_log Public (a curated set of files capturing hands-on learning across various programming languages and technical domains), ChessGame Public (A Chess Game implemented using Functional Programming principles with a GUI built using Tkinter)
+187 contributions in the last year
+[GitHub profile page content / contribution graph / activity feed pasted] [...]
+ 
+17. use the below content and build me a proper flow chart for this project/
+USER -> ELIZA INSPIRED BOT -> (QUIZ MAKING AGENT, CONTENT SUMMARIZATION AGENT (AFTER UPLOADING MATERIALS), FLASH CARDS AGENT) -> PLANNER AGENT (PERSONALIZED AGENT, GENERAL AGENT) [GENERAL + INCASE COMPANY COMING THEN THOSE SPECIFIC RELATED WHERE AGENT CAN FETCH THE PROGRESS] -> PROGRESS TRACKER
+ 
+18. something ethnic - indian, greek or latin
+ 
+19. Dear students,
+Good evening,
+We are pleased to inform you about the opportunity with the Ivanti Internship Program.
+Please go through the below mail very carefully. Eligible and interested students can fill the Google form on or before 5:00 pm today without fail.
+Academic Performance: Minimum 8.5 CGPA from 10th grade onwards, with no backlogs
+Note: Eligible: who have a strong coding ability + AI/ML projects and are interested in taking up the Internship for 12 months. Please note students who will be selected for this role will not be eligible to apply for any other job + internship roles.
+Best Regards, Mr.K.Mahesh, Placements Team, BVRIT HYDERABAD College of Engineering for Women
+[Forwarded email chain with Ivanti Internship Program details, eligibility, program duration Aug 3 2026 start, etc.] [...]
+ 
+20. Create a comprehensive Google Sheet peer observation checklist for Occupational Therapists to evaluate clinical practice, professionalism, communication, documentation, student interaction, safety, and evidence-based interventions. Include rating scales, comments, and an overall feedback section.
+ 
+21. Prompt:
+I want to create a simple, easy-to-use Google Sheets tracker/checklist to monitor the progress of all children receiving Occupational Therapy in a school setting.
+The tracker should: Help record each child's OT progress. Work like a checklist with tick boxes, ratings, or simple options. Allow me to update progress regularly. Show year-wise progress (e.g., compare Year 1–5). Be easy to understand and use by anyone. Suggest the best Google Sheets structure, including tabs, columns, headers, and formulas. Include sample data for a few children to demonstrate how it works. Keep the language very simple and focus on creating a practical, school-friendly progress monitoring checklist.
+DO EXACTLY WHAT HAS BEEN ASKED, DO NOT ADD IN STUFF
+ 
+22. make a student progress tracker for monitoring the following fields PER DAY - such that, we are able to monitor their weekly performance - (track daily, check performace weekly)
+- activity
+- skills
+- performace
+- timings
+sheets needed:
+1. progress dashboard (show progress for each student indiviuually, include graphs/graphical representation/charts)
+2. to be able to store per-student-data per day, and also be able to filter out students by their UID if needed. - this one will store the above mentoined skills - STUDENT PERFORNACNCE BEASED ON SESSION
+3. functional problems, academic issue, academic performace, clinical implications - this sheet will track per student - OCUUPATIONAL T CONCERN AREA
+* color pallete for THEME of the sheet - red, green, yellow, light purple, (make them all light and easy going to look at)
+ 
+23. give me a workflow for the below project (simiilar to the agentic one)
+project: merchent tracker
+what problem does it solve:
+1. helps merchents market in sales
+2. track transactions of the customers
+3. track transactions of their own expenses
+4. gowth/progress dashboard
+properties:
+1. multi orchestra agents - eliza, transformer, advanced version of transformer
+2. based on computational resources of the merchent they should be able to switch between the models
+please give me a proper documentation for it - problem statement, sdgs it sovles and what would the flow be like + an FLOWCAHRT
+ 
+24. READ THE PREVIOUS CHATS. YOU KNOW WHAT I AM INTO. RIGHT? GREAT.
+NOW, LOOK INTO GOVT OFFICAIL WEBSITES AND SEE IF ITS POSSIBLE FOR ME TO TAKE ON ANY GOVT-STUDENT FRIENDLY PROJECTS.
+ 
+25. Okay. I'm a part of some, professor, professor of practice. He's from IIT, he's gonna come to our college today. So, I just wanted to know the area of interest I'm interested in, in case he asks for an intro. So, we thought of saying name, department, ER, etc. So, help me out with that.
+ 
+26. Idk. Simple and impressive. (Er is a typo)
+ 
+27. Please look thru previous chats and help me what my area of intrest it
+ 
+28. BVRIT Hyderabad
+Welcome, Trupti Agrawal
+Placement Hub
+My Preparation Profile
+Build your résumé snapshot — academic details, skills, projects, and experience for mock interviews.
+Profile completion 14% — 1 of 7 sections complete
+[... StackTrack Placement Hub profile page content pasted, listing Skills/Projects/Experience sections, all currently empty ...]
+Profile strength 11/100 — Minimal
+HELP ME FILL THIS
+ 
+29. I AM SO DAMN INDECISIVE!
+ 
+30. LOOK. I HAVE A LOTS AND LOTS TO STUDY
+1. SYSTEM DESIGN 2. OS 3. CN 4. DBMS 5. AI 6. ML 7. DL 8. OOPS 9. JAVA 10. SE 11. DOCKER 12. KUBERNETS
+LEARN TOOLS
+1. PYTHON 2. JAVA 3. VS CODE 4. AI TOOLS 5. FRONTEND - ALL OF IT DEEPLY 6. BACKEND - ALL OF IT DEEPLY 7. THE MIDDLE TOO
+DO PROJECTS
+1. WORK ON MEDICAL HEALTH CARE SIDE (COMPLETELY NEW [message may have continued/been cut off]
+ 
+31. i will just get up and read then!
+ 
+32. ugh idk.
+ 
+33. okie
+ 
+34. A clean, modern editorial illustration in isometric style showing a medical AI diagnostic pipeline as a visual scene, not a flowchart. On the left, a CT scan of a patient with a highlighted region of bone glowing softly. The scan flows toward four distinct robot/AI agent characters, each with a simple icon showing its role: a magnifying glass over the scan (segmentation), a clipboard checking a patient file (clinical cross-check), a gauge or question mark (uncertainty), and a document with a pen (report writing). One path branches to a human doctor figure reviewing a tablet. On the right, a finished diagnostic report document. Soft blue and teal medical color palette, flat vector style, minimal, professional, plenty of white space, subtle depth.
+ 
+35. What could be the word
+ 
+36. this is the idea for the project i am planning to work on. please help me create workflows for better understanding. i am a visual learner and understander. so take the above content and help me fit the image of my projects workflow in my brain - so that i can be able to explain my idea to others
+ 
+37. please help me fix the formulae in this document!
+ 
+38. Help me solve this
+ 
+39. ..
+ 
+40. Give me the answer for above puzzle
+ 
+41. It's wrong
+ 
+42. Please help me fix this
+ 
+43. Row and col should have unique numbers and should satisfy the hints
+ 
+44. please give me the entire code for this
+ 
+45. note: this is for overleaf. work accordingly
+ 
+46. Where am I wrong
+ 
+47. Which numbers should I change then
+ 
+48. I have UBS coming to the campus with 2 rounds Culture aptitude test and cognitive ability test (AON) give me all the questions and topics be it coding or aptitude accordingly
+ 
+49. please help me think of a java
+java + system design -> a good full stack java project. covering all the various topics. Aiming to make this project such that i could easily learn and also impress comapnies like UBS! VISA, HSBC, ETC.
+user auth -> frontend -> backend -> database
+all the porcesses i wanna learn!
+and please help me out with a basic one though, dont make it TOOOO nice for now.
+ 
+50. \item Built a full-stack task management application with a \textbf{Java Spring Boot} backend, implementing \textbf{JWT-based authentication} and role-based access control.
+\item Designed a normalized \textbf{PostgreSQL} schema with proper relationships between users, projects, and tasks, using Spring Data JPA for persistence.
+\item Integrated an \textbf{AI-assisted task creation} feature, parsing natural language input into structured tasks via an LLM API call
+instead of this give ytwo points that would strongly represent the project also in simple words and buzz words too
+ 
+51. give a fun name to this project
+ 
+52. please fix this,the aboveone. make it look nice
+ 
+53. PLEASE FIX THIS
+ 
+54. KEEP EVERYTHING AS IT IS. BUT, CHANGE THE FONT INTO A SINGLE FONT - TIMES ROMAN. JUST THE FONT, NOTHING ELSE.
+ 
+55. and only give me the lines for the gothub link
+in similar fashion as about linkdein: hard link
+(just those indv lines so i can paste intead of Github
+ 
+56. for each project!
+ 
+57. bro literally no change bro.
+i want it to look like
+Futoshiki (GitLab Hard code link)
+ 
+58. UBS IS COMING.
+WHAT ALL SHOULD I PREPARE? REFER 1. MY RESUME 2. ASSUME I KNOW ABSOLUTELY NOTHING (SEE PREVIOUS CHATS) 3. FETCH THE PYQ OF UBS 4. THIS IS WHAT THEY TOLD US - Dear Campus Partner,
+Greetings from UBS!
+We are pleased to confirm our participation in the campus placement drive for an Internship program and Full-time opportunities for our Technology teams in India.
+Eligibility: B.Tech students from CS and CS-aligned streams with a minimum CGPA of 7.0 (overall).
+Compensation: Internship stipend of INR 60,000/month; Full-time annual compensation of INR 13 LPA + one-time Relocation Assistance up to INR 3 Lakhs + performance bonus + benefits.
+Job location: Pune / Hyderabad
+Recruitment process timeline: Pre-placement talk (virtual, MS Teams); Interview 5th August 2026, in-person. Candidates must appear for the Culture Aptitude Test and Cognitive Ability Test (AON) prior to 3rd August 2026.
+All CVs should include a photograph and clearly mention year of passing (e.g., 2025–2027)...
+[message continues, truncated in retrieval]
+ 
+59. USE THIS EXACT SAME TEMPLATE. BUT, USE THE EXACT SAME CONTENT FROM THE SECOND (SATHVIKA)
+ 
+60. please give me a prompt to update my linkdrin bannrer according to my data (get it from prev chats. i am usinfg a red marron bg theme)
