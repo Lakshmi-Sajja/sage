@@ -28,12 +28,24 @@ CATBOOST_DIR = MODEL_DIR / "catboost"
 LIGHTGBM_DIR = MODEL_DIR / "lightgbm"
 
 NUMERIC_FEATURES = [
-    "char_count", "word_count", "line_count", "sentence_count",
-    "unique_words", "avg_word_length", "prompt_depth",
+    "char_count",
+    "word_count",
+    "line_count",
+    "sentence_count",
+    "unique_words",
+    "avg_word_length",
+    "prompt_depth",
 ]
 BOOL_FEATURES = [
-    "has_code", "has_json", "has_markdown", "has_math", "has_xml",
-    "reasoning_prompt", "creative_prompt", "tool_usage_prompt", "rag_prompt",
+    "has_code",
+    "has_json",
+    "has_markdown",
+    "has_math",
+    "has_xml",
+    "reasoning_prompt",
+    "creative_prompt",
+    "tool_usage_prompt",
+    "rag_prompt",
 ]
 FEATURE_ORDER = NUMERIC_FEATURES + BOOL_FEATURES
 
@@ -41,9 +53,9 @@ FEATURE_ORDER = NUMERIC_FEATURES + BOOL_FEATURES
 # data -- edit to match actual provider pricing at the time of use; the
 # dataset itself carries no pricing column.
 PRICING = {
-    "claude-opus-4-8": {"input": 15.00, "output": 75.00},
+    "claude-opus-4-8": {"input": 5.00, "output": 25.00},
     "Groq-llama-3.3-70b-versatile": {"input": 0.59, "output": 0.79},
-    "DeepSeek V4 Flash": {"input": 0.27, "output": 1.10},
+    "DeepSeek V4 Flash": {"input": 0.14, "output": 0.28},
     "deepseek-reasoner": {"input": 0.55, "output": 2.19},
 }
 
@@ -66,12 +78,17 @@ def predict_rf(prompt_row: dict, models: list) -> tuple:
     token_pipeline = joblib.load(MODEL_DIR / "token_predictor.joblib")
     quality_pipeline = joblib.load(MODEL_DIR / "quality_predictor.joblib")
 
-    X = pd.DataFrame([{**prompt_row, "model": m} for m in models])[["model"] + FEATURE_ORDER]
+    X = pd.DataFrame([{**prompt_row, "model": m} for m in models])[
+        ["model"] + FEATURE_ORDER
+    ]
 
     token_preds = np.clip(token_pipeline.predict(X), a_min=0, a_max=None)
     quality_preds = quality_pipeline.predict(X)
 
-    tokens = {m: (int(round(token_preds[i, 0])), int(round(token_preds[i, 1]))) for i, m in enumerate(models)}
+    tokens = {
+        m: (int(round(token_preds[i, 0])), int(round(token_preds[i, 1])))
+        for i, m in enumerate(models)
+    }
     quality = {m: quality_preds[i] for i, m in enumerate(models)}
     return tokens, quality
 
@@ -86,13 +103,18 @@ def predict_catboost(prompt_row: dict, models: list) -> tuple:
     quality_model = CatBoostClassifier()
     quality_model.load_model(str(CATBOOST_DIR / "quality_predictor.cbm"))
 
-    X = pd.DataFrame([{**prompt_row, "model": m} for m in models])[["model"] + FEATURE_ORDER]
+    X = pd.DataFrame([{**prompt_row, "model": m} for m in models])[
+        ["model"] + FEATURE_ORDER
+    ]
 
     input_preds = np.clip(input_model.predict(X), a_min=0, a_max=None)
     output_preds = np.clip(output_model.predict(X), a_min=0, a_max=None)
     quality_preds = quality_model.predict(X).ravel()
 
-    tokens = {m: (int(round(input_preds[i])), int(round(output_preds[i]))) for i, m in enumerate(models)}
+    tokens = {
+        m: (int(round(input_preds[i])), int(round(output_preds[i])))
+        for i, m in enumerate(models)
+    }
     quality = {m: quality_preds[i] for i, m in enumerate(models)}
     return tokens, quality
 
@@ -102,12 +124,20 @@ def predict_lightgbm(prompt_row: dict, models: list) -> tuple:
 
     import lightgbm as lgb
 
-    input_model = lgb.Booster(model_file=str(LIGHTGBM_DIR / "token_predictor_input_tokens.txt"))
-    output_model = lgb.Booster(model_file=str(LIGHTGBM_DIR / "token_predictor_output_tokens.txt"))
+    input_model = lgb.Booster(
+        model_file=str(LIGHTGBM_DIR / "token_predictor_input_tokens.txt")
+    )
+    output_model = lgb.Booster(
+        model_file=str(LIGHTGBM_DIR / "token_predictor_output_tokens.txt")
+    )
     quality_model = lgb.Booster(model_file=str(LIGHTGBM_DIR / "quality_predictor.txt"))
-    quality_classes = json.loads((LIGHTGBM_DIR / "quality_predictor_classes.json").read_text())
+    quality_classes = json.loads(
+        (LIGHTGBM_DIR / "quality_predictor_classes.json").read_text()
+    )
 
-    X = pd.DataFrame([{**prompt_row, "model": m} for m in models])[["model"] + FEATURE_ORDER]
+    X = pd.DataFrame([{**prompt_row, "model": m} for m in models])[
+        ["model"] + FEATURE_ORDER
+    ]
     X["model"] = X["model"].astype("category")
 
     input_preds = np.clip(input_model.predict(X), a_min=0, a_max=None)
@@ -115,7 +145,10 @@ def predict_lightgbm(prompt_row: dict, models: list) -> tuple:
     quality_probs = quality_model.predict(X)
     quality_preds = [quality_classes[i] for i in np.argmax(quality_probs, axis=1)]
 
-    tokens = {m: (int(round(input_preds[i])), int(round(output_preds[i]))) for i, m in enumerate(models)}
+    tokens = {
+        m: (int(round(input_preds[i])), int(round(output_preds[i])))
+        for i, m in enumerate(models)
+    }
     quality = {m: quality_preds[i] for i, m in enumerate(models)}
     return tokens, quality
 
@@ -124,14 +157,22 @@ def estimate_cost(model: str, input_tokens: int, output_tokens: int):
     rates = PRICING.get(model)
     if rates is None:
         return None
-    return (input_tokens / 1_000_000) * rates["input"] + (output_tokens / 1_000_000) * rates["output"]
+    return (input_tokens / 1_000_000) * rates["input"] + (
+        output_tokens / 1_000_000
+    ) * rates["output"]
 
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("prompt", help="Prompt text to estimate tokens/cost/quality for")
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     parser.add_argument(
-        "--backend", choices=["catboost", "rf", "lightgbm"], default="catboost",
+        "prompt", help="Prompt text to estimate tokens/cost/quality for"
+    )
+    parser.add_argument(
+        "--backend",
+        choices=["catboost", "rf", "lightgbm"],
+        default="catboost",
         help="Which trained model family to use (default: catboost)",
     )
     args = parser.parse_args()
@@ -139,7 +180,11 @@ def main():
     models = known_models()
     prompt_row = build_feature_row(args.prompt)
 
-    predict_fn = {"rf": predict_rf, "catboost": predict_catboost, "lightgbm": predict_lightgbm}[args.backend]
+    predict_fn = {
+        "rf": predict_rf,
+        "catboost": predict_catboost,
+        "lightgbm": predict_lightgbm,
+    }[args.backend]
     tokens, quality = predict_fn(prompt_row, models)
 
     rows = []
@@ -150,7 +195,9 @@ def main():
     rows.sort(key=lambda r: r[3] if r[3] is not None else float("inf"))
 
     name_w = max(len(r[0]) for r in rows) + 2
-    print(f"{'Model':<{name_w}}{'Input Tok':>10}{'Output Tok':>12}{'Cost':>10}{'Quality':>12}")
+    print(
+        f"{'Model':<{name_w}}{'Input Tok':>10}{'Output Tok':>12}{'Cost':>10}{'Quality':>12}"
+    )
     for m, in_tok, out_tok, cost, q in rows:
         cost_str = f"${cost:.4f}" if cost is not None else "n/a"
         print(f"{m:<{name_w}}{in_tok:>10}{out_tok:>12}{cost_str:>10}{q:>12}")
